@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Headings from './components/Headings';
+import species from './data/species'
+import './App.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      dinos: [],
+      numberOfDinos: 0,
+      currentSpecies: species[0]
+    }
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Headings />
+      </div>
+    );
+  }
 }
 
 export default App;
